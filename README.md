@@ -14,14 +14,22 @@ This project provides an advanced multi-stage estimation system for handling mis
 python3 -m venv .venv
 source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 
-# Install dependencies
-pip install pandas numpy matplotlib scipy
+# Install dependencies from requirements.txt
+pip install -r requirements.txt
 ```
 
 ### Running the System
 ```bash
 python src/estimate_us_ip.py
 ```
+
+### Dependencies
+The project uses the following Python packages (see `requirements.txt` for versions):
+- **pandas** - Data manipulation and analysis
+- **numpy** - Numerical computing
+- **scipy** - Scientific computing (cubic spline interpolation)
+- **matplotlib** - Data visualization
+- **Additional dependencies** - Supporting packages for the above
 
 ## Project Structure
 
@@ -35,9 +43,12 @@ industrial_production/
 │   └── ip_raw.csv                 # Raw industrial production data
 ├── outputs/
 │   ├── ip_actual_vs_estimated.csv # Output from estimation system
+│   ├── ip_filled.csv              # Additional output file
 │   └── ip_forecasts_vs_actual.png # Visualization
-├── README.md                      # This file
-└── README_ESTIMATION.md           # Detailed estimation system docs
+├── requirements.txt               # Python dependencies
+├── .gitignore                     # Git ignore rules
+├── .venv/                         # Virtual environment
+└── README.md                      # This file
 ```
 
 ## Estimation System (`estimate_us_ip.py`)
@@ -125,8 +136,7 @@ python -m unittest tests.test_estimate_us_ip.TestReadRawData.test_read_raw_data_
 
 ## Documentation
 
-- **README.md** - This overview file
-- **README_ESTIMATION.md** - Detailed estimation system documentation
+- **README.md** - This comprehensive overview file
 
 ## Output Files
 
